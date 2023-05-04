@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Aves do Plantel</title>
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Aves do Plantel</h2>
+        </div>
+        <div>
+            <br>
+            <section>
+                <input type="text"  id="buscarAnilha" placeholder="Buscar por Anilha">
+                <span onclick="getItem()" class="addBtn">Buscar</span>
+                <label for="aveLocalizada"><span id="anilhaDigitada"></span></label>
+
+            </section>
+        </div>
+        <!-- <div class="banner">
+            <img src="./img/banner1.jpeg"
+                alt="y">
+        </div> -->
+    </header>
+
+    
+
+     <!-- Opções para adicionar um novo item -->
+    <section class="newItem">
+        <input type="text" id="newAnilha" placeholder="Número da Anilha:">
+        <input type="text" id="newEspecie" placeholder="Espécie:">
+        <input type="text" id="newMutacao" placeholder="Mutação:">
+        <input type="text" id="newSexo" placeholder="Sexo = M ou F:">
+        <input type="text" id="newNascimento" placeholder="Data de Nascimento:">
+
+        <span onclick="newItem()" class="addBtn">Adicionar</span>
+    </section>
+
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <table id="myTable">
+            <tr>
+                <th>Número da Anilha</th>
+                <th>Espécie</th>
+                <th>Mutação</th>
+                <th>Sexo</th>
+                <th>Data de Nascimento</th>
+                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                <!-- <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th> -->
+
+            </tr>
+        </table>
+    </section>
+
+    <!-- MOdal -->
+    <div class="modal" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Dados da Ave</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Anilha: <span id="anilha"></span></p>
+              <p>Espécie: <span id="especie"></span></p>
+              <p>Mutação: <span id="mutacao"></span></p>
+              <p>Sexo: <span id="sexo"></span></p>
+              <p>Data de Nascimento: <span id="data_nascimento"></span></p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="modal" tabindex="-1" id="erro">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Um erro foi encontrado</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="msgErro"></p>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+    
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
